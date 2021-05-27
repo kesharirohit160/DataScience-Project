@@ -71,7 +71,6 @@ Stratified K-Fold Cross Validation is an extension of K-Fold cross-validation, i
 When you have a small data set, the computation time will be manageable to test out different hyperparameter combinations. In this scenario, it is advised to use a grid search.
 But, with large data sets, it is advised to use a randomized search because the sampling will be random and not uniform. 
  
-
 Model Evaluation:
 
 Accuracy is not always the correct metric for solving classification problems of imbalanced data.
