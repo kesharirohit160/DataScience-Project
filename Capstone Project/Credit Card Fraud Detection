@@ -1,0 +1,79 @@
+Introduction
+Welcome to the Capstone Project on Credit Card Fraud Detection.
+
+The aim of this project is to predict fraudulent credit card transactions using machine learning models. 
+
+
+Although digital transactions in India registered a 51% growth in 2018-19, their safety remains a concern. Fraudulent activities have increased severalfold, with around 52,304 cases of credit/debit card fraud reported in FY'19 alone. Due to this steep increase in banking frauds, it is the need of the hour to detect these fraudulent transactions in time in order to help consumers as well as banks, who are losing their credit worth each day. Machine learning can play a vital role in detecting fraudulent transactions.
+
+
+Until now, you have learnt about the different types of machine learning models, but now you will learn which model to choose for your purpose and why. Understanding the models based on different scenarios is an important skill that a data scientist/machine learning engineer should possess. In addition, tuning your model is equally important to get the best fit for your given data.
+ 
+By the end of this module, you will be able to understand how you can build a machine learning model capable of detecting fraudulent transactions. You will also learn how to handle class imbalances present in any data set, along with model selection and hyperparameter tuning.
+ 
+
+In this session
+You will learn the following:
+
+Understand the problem statement
+Learn how and why to handle class imbalances and normalise the data set
+Learn about model selection and model interpretability 
+Get an understanding of hyperparameter tuning
+Learn about performance metrics
+ Project Understanding
+Imagine you get a call from your bank, and the customer care executive informs you that your card is about to expire in a week. Immediately, you check your card details and realise that it will expire in the next 8 days. Now, in order to renew your membership, the executive asks you to verify a few details such as your credit card number, the expiry date and the CVV number. Will you share these details with the executive?
+
+
+In such situations, you need to be careful because the details that you might share with them could grant them unhindered access to your credit card account.
+ 
+In this module, you will understand frauds from a bank’s perspective and learn to what extent these frauds affect their business. Banks need to be cautious about their customers’ transactions, as they cannot afford to lose their customers’ money to fraudsters. Every fraud is a loss to the bank as the bank is responsible for the fraud transactions if it is reported within a certain time frame by the customer.
+
+The project pipeline can be briefly summarized in the following four steps:
+
+Data Understanding: Here, you need to load the data and understand the features present in it. This would help you choose the features that you will need for your final model.
+ 
+Exploratory data analytics (EDA): Normally, in this step, you need to perform univariate and bivariate analyses of the data, followed by feature transformations, if necessary. For the current data set, because Gaussian variables are used, you do not need to perform Z-scaling. However, you can check if there is any skewness in the data and try to mitigate it, as it might cause problems during the model-building phase.
+
+Can you think why skewness can be an issue while modelling? Well, some of the data points in a skewed distribution towards the tail may act as outliers for the machine learning models which are sensitive to outliers and hence that may cause a problem. Also, if the values of any independent feature are skewed, depending on the model, skewness may affect model assumptions or may impair the interpretation of feature importance. 
+ 
+
+Train/Test Split: Now you are familiar with the train/test split, which you can perform in order to check the performance of your models with unseen data. Here, for validation, you can use the k-fold cross-validation method. You need to choose an appropriate k value so that the minority class is correctly represented in the test folds.
+ 
+Model-Building/Hyperparameter Tuning: This is the final step at which you can try different models and fine-tune their hyperparameters until you get the desired level of performance.
+
+Summary
+You have come a long way! You have learnt different techniques in Machine learning with which you should now be able to build your own model for Credit card fraud detection.
+
+The most important points to re-iterate are:
+
+ 
+
+Class Imbalances:
+
+In Undersampling, you select fewer data points from the majority class for your model-building process in order to balance both the classes.
+In Oversampling, you assign weights to randomly chosen data points from the minority class. It is done so that the algorithm can focus on this class while optimising the loss function.
+SMOTE is a process where you can generate new data points, which lie vectorially between two data points that belong to the minority class.
+ADASYN is similar to SMOTE, with a minor change i.e. the number of synthetic samples that it will add will have a density distribution. The aim here is to create synthetic data for minority examples that are harder to learn, rather than the easier ones. 
+ 
+
+Model Selection & understanding:
+
+Logistic regression works best when the data is linearly separable and needs to be interpretable. 
+KNN is also highly interpretable, but not preferred when we have a huge amount of data as it will consume a lot of computation.
+The decision tree model is the first choice when we want the output to be intuitive, but they tend to overfit if left unchecked.
+KNN is a simple, supervised machine learning algorithm used for both classification and regression tasks. The k value in KNN should be an odd number because you have to take the majority vote from the nearest neighbours by breaking the ties. 
+In Gradient Boosted machines/trees. newly added trees are trained to reduce the errors (loss function) of earlier models.
+XGBoost is an extended version of gradient boosting, with additional features like regularization and parallel tree learning algorithm for finding the best split. 
+Hyperparameter Tuning:
+
+When the data is imbalanced or less, it is better to use K-Fold Cross Validation for evaluating the performance when the data set is randomly split into ‘k’ groups.
+Stratified K-Fold Cross Validation is an extension of K-Fold cross-validation, in which we rearrange the data to ensure that each fold is a good representative of all the strata of the data.
+When you have a small data set, the computation time will be manageable to test out different hyperparameter combinations. In this scenario, it is advised to use a grid search.
+But, with large data sets, it is advised to use a randomized search because the sampling will be random and not uniform. 
+ 
+
+Model Evaluation:
+
+Accuracy is not always the correct metric for solving classification problems of imbalanced data.
+Because the ROC curve is measured at all thresholds, the best threshold would be one at which the TPR is high and FPR is low, i.e., misclassifications are low.
+Depending on the use case, you have to account for what you need: high precision or high recall.
